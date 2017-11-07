@@ -118,7 +118,7 @@ public abstract class AsyncHttpResponseHandler implements ResponseHandlerInterfa
      */
     public AsyncHttpResponseHandler(Looper looper) {
         // Do not use the pool's thread to fire callbacks by default.
-        this(looper == null ? Looper.myLooper() : looper, false);
+        this(looper == null ? Looper.myLooper() : looper, (looper == null && Looper.myLooper() == null));
     }
 
     /**
